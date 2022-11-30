@@ -6,6 +6,7 @@ import Profile from './Component/Section_profile';
 import Projects from './Component/Section_projects';
 import Skills from './Component/Section_skills';
 import Footer from './Component/Section_footer';
+import { useEffect } from 'react';
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -56,18 +57,27 @@ table {
 	border-spacing: 0;
 }
 `
+
 function App() {
-  return (
-    <div className="App">
-      <GlobalStyle />
-	  <Navbar />
-      <Home />
-      <Profile />
-	  <Skills />
-      <Projects />
-	  <Footer />
-    </div>
-  );
+
+	useEffect(() => {
+		window.onbeforeunload = function pushRefresh() {
+			window.scrollTo(0, 0);
+		};
+
+	}, []);
+
+	return (
+		<div className="App">
+			<GlobalStyle />
+			<Navbar />
+			<Home />
+			<Profile />
+			<Skills />
+			<Projects />
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
