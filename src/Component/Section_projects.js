@@ -57,10 +57,6 @@ const ProjectList = styled.div`
 
             img {
                 width: 100%;
-                -webkit-transform: scale(1);
-                -moz-transform: scale(1);
-                -ms-transform: scale(1);
-                -o-transform: scale(1);
                 transition: all 0.5s ease-in-out;
             }
             img:hover {
@@ -74,7 +70,7 @@ const ProjectList = styled.div`
         }
 
         span {
-            font-size: 2px;
+            font-size: 18px;
             font-weight: bold;
             color: #87CEFA;
             margin-top: 8%;

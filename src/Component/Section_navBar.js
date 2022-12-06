@@ -7,7 +7,7 @@ const Nav = styled.div`
     width: 100%;
     height: 7vh;
     position: fixed;
-    /* background-color: #0f2145; */
+    background-color: #0f2145;
     z-index: 3;
 
      ul {
