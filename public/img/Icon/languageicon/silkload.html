@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="silkload.css">
+    <meta charset="utf-8">
+    <title>silkload</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+    $( document ).ready( function() {
+      var jbOffset = $( 'ul' ).offset();
+      $( window ).scroll( function() {
+        if ( $( document ).scrollTop() > jbOffset.top ) {
+          $( 'ul' ).addClass( 'jbFixed' );
+        }
+        else {
+          $( 'ul' ).removeClass( 'jbFixed' );
+        }
+      });
+    });
+    
+    $(function(){
+  		$('#header>ul>li').mouseenter(function(){
+  			$('#header>ul>li').find('.dropdown').stop().slideDown();
+  		});
+  		$('#header>ul>li').mouseleave(function(){
+  			$('#header>ul>li').find('.dropdown').stop().slideUp();
+  		});
+  	});
+
+    $(function(){
+  		$(window).scroll(function(){
+  			var scrollTopNum=$(document).scrollTop();
+  			if(scrollTopNum<=41){
+  				scrollTopNum=41;
+  			}
+  			$('.top>a').stop().animate({top:scrollTopNum+635}, 635);
+  		});
+  	});
+
+    $(function(){
+  	 $('.top>a').click(function(event){
+  		 event.preventDefault();
+  		 var section=$($(this).attr('href'));
+  	 	 $('html, body').animate({scrollTop:section.offset().top},800);
+    	});
+    });
+
+    $(function(){
+  		function slidePoster(){
+  			var imgs=$('#content').find('img');
+  			var first=imgs.eq(0);
+  			var second=imgs.eq(1);
+  			second.fadeIn(2000);
+  			first.fadeOut(2000, function(){
+  				first.appendTo($('#content'));
+  			});
+  		}
+  		setInterval(slidePoster,4000);
+  	});
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="ngb">
+        <a href="silkload.html"><img src="img/logo.jpg" ></a>
+        <span>
+          <a href="#">로그인 |</a>
+          <a href="#">회원가입 |</a>
+          <a href="#">멤버십 |</a>
+          <a href="#">고객문의</a>
+        </span>
+      </div>
+      <ul>
+        <li><a href="#">객실</a>
+          <ul class="dropdown">
+            <li><a href="#">SUPERIOR DOUBLE</a></li>
+            <li><a href="#">SUPERIOR TWIN</a></li>
+            <li><a href="#">ROYAL SUITE ROOM</a></li>
+            <li><a href="#">JUNIOR SUITE ROOM</a></li>
+            <li><a href="#">FAMILY ROOM</a></li>
+            <li><a href="#">COOKING ROOM</a></li>
+          </ul>
+        </li>
+        <li><a href="#">프로모션</a>
+          <ul class="dropdown">
+            <li><a href="#">호텔패키지</a></li>
+            <li><a href="#">룸 프로모션</a></li>
+            <li><a href="#">호텔 이벤트</a></li>
+            <li><a href="#">스페셜딜</a></li>
+          </ul>
+        </li>
+        <li><a href="#">시설·서비스</a>
+          <ul class="dropdown">
+            <li><a href="#">BANQUET HALL</a></li>
+            <li><a href="#">FITNESS CENTER</a></li>
+            <li><a href="#">SCREENGOLF ZONE</a></li>
+            <li><a href="#">MASSAGE</a></li>
+            <li><a href="#">PARKING LOT</a></li>
+          </ul>
+        </li>
+        <li><a href="#">호텔소개</a>
+          <ul class="dropdown">
+            <li><a href="#">호텔스토리</a></li>
+            <li><a href="#">브랜드 소개</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">서비스 아카데미</a></li>
+          </ul>
+        </li>
+        <li><a href="#">예약</a>
+          <ul class="dropdown">
+            <li><a href="#">예약하기</a></li>
+            <li><a href="silkload_1.html">예약조회</a></li>
+          </ul>
+        </li>
+    </div>
+    <div id="content">
+      <img src="img/main1.jpg">
+      <img src="img/main2.jpg">
+      <img src="img/main3.jpg">
+      <p>Spacious, Comfortable<br>Resonable place</p>
+    </div>
+      <div class="title">
+        <h1>accommodation</h1>
+      </div>
+      <div class="notice">
+        <div class="hover">
+          <img src="img/guest_1.png">
+        </div>
+        <div class="hover">
+          <img src="img/guest_2.png">
+        </div>
+        <div class="hover">
+          <img src="img/guest_6.png">
+        </div>
+      </div>
+      <div class="text">
+        <a href="#">SUPERIOR DOUBLE ROOM<br>슈페리어 더블<br><br>190,000won</a>
+        <a href="#">SUPERIOR TWIN ROOM<br>슈페리어 트윈<br><br>190,000won</a>
+        <a href="#">ROYAL SUITE ROOM<br>로얄 스위트<br><br>250,000won</a>
+      </div>
+      <div class="notice_1">
+        <div class="hover">
+          <img src="img/guest_3.png">
+        </div>
+        <div class="hover">
+          <img src="img/guest_4.png">
+        </div>
+        <div class="hover">
+          <img src="img/guest_5.png">
+        </div>
+      </div>
+      <div class="text_1">
+        <a href="#">JUNIOR SUITE ROOM<br>주니어 스위트<br><br>220,000won</a>
+        <a href="#">FAMILY ROOM<br>가족룸<br><br>250,000won</a>
+        <a href="#">COOKING ROOM<br>취사가능 객실<br><br>220,000won</a>
+      </div>
+      <div class="title">
+        <h1>gallery</h1>
+      </div>
+      <aside class="top">
+        <a href="#header">top</a>
+      </aside>
+      <div class="video">
+        <iframe width="800" height="500" src="https://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=A4FF6A62621D513814EA06898225236B08BC&outKey=V123380f1d3dd32f01950d2a0111826c28d30de30c8efe612cad7d2a0111826c28d30" frameborder="no" scrolling="no" title="NaverVideo" allow="autoplay; gyroscope; accelerometer; encrypted-media" allowfullscreen></iframe>
+      </div>
+    <div id="footer">
+      <img src="img/logo1.gif">
+      <p>수원실크로드호텔 | 경기도 수원시 팔달구 인계동 1022 | 대표 : 박묘은 | 사업자번호 : 132-01-35986<br>
+         tel : 031-232-9981 | fax : 031-232-9982 | E-mail : hotelsilkroad@hanmail.net<br>
+         copyright 2009 hotel silkroad all right reserved.</p>
+    </div>
+  </body>
+</html>

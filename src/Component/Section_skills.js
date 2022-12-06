@@ -256,6 +256,7 @@ function Skills() {
                                 initial="start"
                                 animate={barAnimation}
                                 variants={reactBarStyles}
+                                layout
                             />
                         </div>
                     </div>

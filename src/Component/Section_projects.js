@@ -1,5 +1,7 @@
+import {  AnimateSharedLayout, motion } from "framer-motion";
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
+import Item from "./Item";
 
 const customMedia = generateMedia({
     labtop: '1550px'
@@ -10,6 +12,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     margin: auto;
+    background-color: #eee;
 `
 const Layout = styled.div`
     width: 1020px;
@@ -26,48 +29,104 @@ const Layout = styled.div`
         `}
     }
 `
-const ProjectsContainer = styled.div`
+const ProjectList = styled.div`
+    width: 1020px;
     display: flex;
     justify-content: center;
-    margin-top: 7.5%;
+    margin-top: 20%;
+
+    ${customMedia.lessThan("labtop")`
+            margin-top: 10%;
+        `}
 
     .projectBox {
-        /* width: 340px;
-        height: 560px; */
-        /* overflow: hidden; */
+        width: 400px;
+        height: 300px;
+        margin: 0 50px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
 
-        img {
-            width: 350px;
-            height: 560px;
-            margin: 0 100px;
+        .displayProject {
+            width: 100%;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
 
-            ${customMedia.lessThan("labtop")`
-                width: 250px;
-                height: 350px;
-            `}
+            img {
+                width: 100%;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transition: all 0.5s ease-in-out;
+            }
+            img:hover {
+                transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                -o-transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
 
+        span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #87CEFA;
+            margin-top: 8%;
         }
     }
 `
+// const Motionul = styled(motion.ul)`
+//     width: 100%;
+//     background-color: #11264F;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 20px;
+//     border-radius: 25px;
+//     margin-top: 5%;
+// `
 
 function Projects() {
+
+    // const items = [0, 1];
+
     return (
-        <Container>
-            <div id="projects">
+        <Container id="projects">
 
                 <Layout>
                     <p id="title">Projects</p>
-                    <ProjectsContainer>
+
+                    <ProjectList>
                         <div className="projectBox">
-                            <img src="img/silkload.png" />
+                            <div className="displayProject">
+                                <img src="img/aaa.png"></img>
+                            </div>
+                            <span>VISKIT</span>
                         </div>
+
                         <div className="projectBox">
-                            <img src="img/visang.png" />
+                            <div className="displayProject">
+                                <img src="img/bbb.PNG"></img>
+                            </div>
+                            <span>SILKLOAD</span>
                         </div>
-                    </ProjectsContainer>
+                    </ProjectList>
+                    
+                    {/* <AnimateSharedLayout>
+                        <Motionul layout initial={{ borderRadius: 25 }}>
+                            {items.map(item => (
+                                <Item key={item} />
+                            ))}
+                        </Motionul>
+                    </AnimateSharedLayout> */}
+
                 </Layout>
 
-            </div>
         </Container>
     )
 }
