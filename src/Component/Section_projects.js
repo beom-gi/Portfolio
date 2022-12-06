@@ -74,7 +74,7 @@ const ProjectList = styled.div`
         }
 
         span {
-            font-size: 28px;
+            font-size: 2px;
             font-weight: bold;
             color: #87CEFA;
             margin-top: 8%;
