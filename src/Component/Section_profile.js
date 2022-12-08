@@ -163,7 +163,7 @@ function Profile() {
 
                             <div className="infoBox">
                                 <img src="img/Icon\original/github_icon.png" />
-                                <p>https://github.com/beom-gi</p>
+                                <p>github.com/beom-gi</p>
                             </div>
 
                         </InfoboxConatiner>

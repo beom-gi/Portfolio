@@ -1,4 +1,5 @@
-import {  AnimateSharedLayout, motion } from "framer-motion";
+import { AnimateSharedLayout, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
 import Item from "./Item";
@@ -33,11 +34,15 @@ const ProjectList = styled.div`
     width: 1020px;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 25%;
 
     ${customMedia.lessThan("labtop")`
             margin-top: 10%;
         `}
+
+    a {
+        text-decoration: none;
+    }
 
     .projectBox {
         width: 400px;
@@ -94,26 +99,30 @@ function Projects() {
     return (
         <Container id="projects">
 
-                <Layout>
-                    <p id="title">Projects</p>
+            <Layout>
+                <p id="title">Projects</p>
 
-                    <ProjectList>
-                        <div className="projectBox">
+                <ProjectList>
+                    <a href="https://github.com/beom-gi/Viskit">
+                        <div className="projectBox" href="">
                             <div className="displayProject">
                                 <img src="img/aaa.png"></img>
                             </div>
                             <span>VISKIT</span>
                         </div>
+                    </a>
 
+                    <a href="https://github.com/beom-gi/Silkload/tree/main">
                         <div className="projectBox">
                             <div className="displayProject">
                                 <img src="img/bbb.PNG"></img>
                             </div>
                             <span>SILKLOAD</span>
                         </div>
-                    </ProjectList>
-                    
-                    {/* <AnimateSharedLayout>
+                    </a>
+                </ProjectList>
+
+                {/* <AnimateSharedLayout>
                         <Motionul layout initial={{ borderRadius: 25 }}>
                             {items.map(item => (
                                 <Item key={item} />
@@ -121,7 +130,7 @@ function Projects() {
                         </Motionul>
                     </AnimateSharedLayout> */}
 
-                </Layout>
+            </Layout>
 
         </Container>
     )
