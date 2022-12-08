@@ -2,7 +2,6 @@ import { AnimateSharedLayout, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
-import Item from "./Item";
 
 const customMedia = generateMedia({
     labtop: '1550px'
