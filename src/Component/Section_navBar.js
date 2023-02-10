@@ -5,13 +5,13 @@ import styled from "styled-components";
 
 const Nav = styled.div`
     width: 100%;
-    height: 7vh;
+    height: 53px;
     position: fixed;
     background-color: #0f2145;
     z-index: 3;
 
      ul {
-         height: 7vh;
+         padding: 0.1em 0;
          display: flex;
          justify-content: center;
          align-items: center;

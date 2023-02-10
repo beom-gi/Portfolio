@@ -1,5 +1,4 @@
 import { AnimateSharedLayout, motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
 
@@ -8,129 +7,123 @@ const customMedia = generateMedia({
 });
 
 const Container = styled.div`
-    height: 90vh;
+    height: 93vh;
     display: flex;
     justify-content: center;
-    margin: auto;
     background-color: #eee;
+
 `
 const Layout = styled.div`
-    width: 1020px;
+    width: 100vw;
+    padding-top: 7em;
 
-    #title {
+    ${customMedia.lessThan("labtop")`
+      padding-top: 6em;
+    `}
+
+#title {
         text-align: center;
         color: #11264F;
         font-size: 48px;
         font-weight: bold;
-        margin-top: 13%;
-
-        ${customMedia.lessThan("labtop")`
-            margin-top: 10%;
-        `}
     }
 `
 const ProjectList = styled.div`
-    width: 1020px;
     display: flex;
     justify-content: center;
-    margin-top: 25%;
+    padding-top: 13em;
 
     ${customMedia.lessThan("labtop")`
-            margin-top: 10%;
-        `}
-
-    a {
-        text-decoration: none;
+      padding-top: 5em;
+    `}
+`
+const ProjectItem = styled.div`
+    width: 400px;
+    height: 300px;
+    margin: 0 3%;
+    padding: 0.5em 0;
+    background-color: #fff;
+    text-align: center;
+    
+    .project-title {
+        margin: 1.5em 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #11264F;
     }
 
-    .projectBox {
-        width: 400px;
-        height: 300px;
-        margin: 0 50px;
-        border-radius: 25px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: white;
-
-        .displayProject {
-            width: 100%;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                transition: all 0.5s ease-in-out;
-            }
-            img:hover {
-                transform: scale(1.2);
-                -webkit-transform: scale(1.2);
-                -moz-transform: scale(1.2);
-                -ms-transform: scale(1.2);
-                -o-transform: scale(1.2);
-                opacity: 0.7;
-            }
-        }
-
-        span {
-            font-size: 18px;
-            font-weight: bold;
-            color: #87CEFA;
-            margin-top: 8%;
-        }
+    button {
+        cursor: pointer;
+        width: 60px;
+        height: 30px;
+        background-color: #11264F;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    button:hover {
+        color: #87CEFA;
+        transition: 0.3s;
     }
 `
-// const Motionul = styled(motion.ul)`
-//     width: 100%;
-//     background-color: #11264F;
-//     display: flex;
-//     flex-direction: column;
-//     padding: 20px;
-//     border-radius: 25px;
-//     margin-top: 5%;
-// `
+const ImgContainer = styled.div`
+    width: 380px;
+    height: 185px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    img {
+        width: 380px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        }
+
+    img:hover {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        -o-transform: scale(1.15);
+        opacity: 0.7;
+        }
+`
 
 function Projects() {
 
-    // const items = [0, 1];
+    const projectUrl = ["https://beom-gi.github.io/Chromapp-momentum/", "https://beom-gi.github.io/Drawing-board/", "https://beom-gi.github.io"];
+    const projectCode = ["https://github.com/beom-gi/Chromapp-momentum", "https://github.com/beom-gi/Drawing-board", "https://github.com/beom-gi/Portfolio"];
 
     return (
         <Container id="projects">
-
             <Layout>
                 <p id="title">Projects</p>
 
                 <ProjectList>
-                    <a href="https://github.com/beom-gi/Viskit">
-                        <div className="projectBox" href="">
-                            <div className="displayProject">
-                                <img src="img/aaa.png"></img>
-                            </div>
-                            <span>VISKIT</span>
-                        </div>
-                    </a>
+                    <ProjectItem>
+                        <ImgContainer onClick={() => { window.open(projectUrl[0]) }}>
+                            <img src="img/chromapp.png"></img>
+                        </ImgContainer>
+                        <p className="project-title">Chromapp</p>
+                        <button onClick={() => { window.open(projectCode[0]) }}>code</button>
+                    </ProjectItem>
 
-                    <a href="https://github.com/beom-gi/Silkload/tree/main">
-                        <div className="projectBox">
-                            <div className="displayProject">
-                                <img src="img/bbb.PNG"></img>
-                            </div>
-                            <span>SILKLOAD</span>
-                        </div>
-                    </a>
+                    <ProjectItem>
+                        <ImgContainer onClick={() => { window.open(projectUrl[1]) }}>
+                            <img src="img/paint.png"></img>
+                        </ImgContainer>
+                        <p className="project-title">Paint</p>
+                        <button onClick={() => { window.open(projectCode[1]) }}>code</button>
+                    </ProjectItem>
+
+                    <ProjectItem>
+                        <ImgContainer onClick={() => { window.open(projectUrl[2]) }}>
+                            <img src="img/portfolio.png"></img>
+                        </ImgContainer>
+                        <p className="project-title">Portfolio</p>
+                        <button onClick={() => { window.open(projectCode[2]) }}>code</button>
+                    </ProjectItem>
                 </ProjectList>
-
-                {/* <AnimateSharedLayout>
-                        <Motionul layout initial={{ borderRadius: 25 }}>
-                            {items.map(item => (
-                                <Item key={item} />
-                            ))}
-                        </Motionul>
-                    </AnimateSharedLayout> */}
-
             </Layout>
-
         </Container>
     )
 }

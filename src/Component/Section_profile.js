@@ -9,20 +9,21 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
+    background-color: #eee;
 `
 const Layout = styled.div`
     width: 1020px;
+    padding-top: 7em;
+
+    ${customMedia.lessThan("labtop")`
+      padding-top: 6em;
+    `}
 
     #title {
         text-align: center;
         color: #11264F;
         font-size: 48px;
         font-weight: bold;
-        margin-top: 13%;
-        
-        ${customMedia.lessThan("labtop")`
-            margin-top: 10%;
-        `}
     }
 `
 const ProfileBox = styled.div`
@@ -31,16 +32,12 @@ const ProfileBox = styled.div`
     border-radius: 30px;
     text-align: center;
     margin-top: 4%;
+    background-color: #fff;
     
     ${customMedia.lessThan("labtop")`
       height: 400px;
       padding: 50px;
     `}
-
-    /* ${customMedia.lessThan("labtop")`
-      height: 380px;
-      padding: 50px;
-    `} */
 
     #idPicture {
         width: 188px;
@@ -69,15 +66,6 @@ const ProfileBox = styled.div`
             font-size: 1em;
             margin-top: 10%;
         `}
-
-        /* ${customMedia.lessThan("labtop")`
-            width: 300px;
-            margin: 25px 600px 0 0;
-            float: left;
-            position: relative;
-            line-height: 150%;
-            font-size: 1em;
-        `} */
     }
 `
 const InfoboxConatiner = styled.div`
@@ -93,15 +81,6 @@ const InfoboxConatiner = styled.div`
         grid-template-columns: 300px 300px 300px;
         grid-template-rows: 100px 100px;
     `}
-
-    /* ${customMedia.lessThan("labtop")`
-        grid-template-columns: 200px 200px 200px;
-        grid-template-rows: 180px 180px;
-        margin: 0 auto;
-        position: relative;
-        top: 15%;
-        right: 28%;
-    `} */
 
     .infoBox {
 
@@ -125,9 +104,7 @@ const InfoboxConatiner = styled.div`
 
 function Profile() {
     return (
-        <Container>
-            <div id="profile">
-
+        <Container id="profile">
                 <Layout>
                     <p id="title">Profile</p>
 
@@ -170,8 +147,6 @@ function Profile() {
                     </ProfileBox>
 
                 </Layout>
-            </div>
-
         </Container>
     )
 }

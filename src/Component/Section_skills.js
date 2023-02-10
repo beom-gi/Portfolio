@@ -1,4 +1,4 @@
-import { animate, delay, motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
@@ -15,26 +15,25 @@ const Container = styled.div`
 `
 const Layout = styled.div`
     width: 1020px;
-    height: 100%;
+    padding-top: 20em;
+
+    ${customMedia.lessThan("labtop")`
+      padding-top: 6em;
+    `}
 
     #title {
         text-align: center;
         color: #11264F;
         font-size: 48px;
         font-weight: bold;
-        margin-top: 13%;
-
-        ${customMedia.lessThan("labtop")`
-            margin-top: 10%;
-        `}
     }
 
     .skills-box {
-        margin-top: 10%;
+        margin: 9% 0;
         display: flex;
 
         ${customMedia.lessThan("labtop")`
-            margin-top: 5%;
+            margin: 4.5% 0;
         `}
 
         .logoIcon {
@@ -76,12 +75,9 @@ const LanguageBox = styled.div`
     flex-direction: column;
     align-items: center;
 `
-
-
-
 const Wrapper = styled.div`
     width: 100%;
-    height: 80%;
+    height: 99.9%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,7 +163,7 @@ function Skills() {
     }, [isInView])
 
     return (
-        <Container >
+        <Container>
             <Wrapper id="skills" ref={ref}>
                 {isInView && <Layout >
                     
@@ -262,7 +258,6 @@ function Skills() {
                     </div>
 
                 </Layout>}
-
             </Wrapper>
         </Container>
     )

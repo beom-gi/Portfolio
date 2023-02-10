@@ -1,14 +1,17 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import { motion, useIsPresent, useInView } from "framer-motion";
+import { generateMedia } from "styled-media-query";
 
+const customMedia = generateMedia({
+    labtop: '1550px'
+});
 // white-space: pre-line;  => 줄바꿈
 const Container = styled.div`
     height: 100vh;
     background-color: #11264F;
     display: flex;
     justify-content: center;
-    /* margin: auto; */
 
     .privacy-screen {
         position: fixed;
@@ -20,34 +23,14 @@ const Container = styled.div`
         z-index: 5;
 }
 `
-// const Nav = styled.div`
-//     width: 100%;
-//     height: 7vh;
-//     position: fixed;
-//     background-color: #11264F;
-//     z-index: 3;
-
-//      ul {
-//          height: 7vh;
-//          display: flex;
-//          justify-content: center;
-//          align-items: center;
-
-//          li {
-//              color: white;
-//              display: inline-block;
-//              margin: 0 100px;
-//              font-size: 18px;
-//              cursor: pointer;
-//          }
-//      }
-// `
 const Layout = styled.div`
     width: 1020px;
-    padding: 40vh 0;
+    padding: 30em 0;
+    ${customMedia.lessThan("labtop")`
+            padding: 18em 0;
+        `}
 
         p {
-            /* display: block; */
             transform: translateX(-100px);
             opacity: 0;
             font-size: 64px;
@@ -65,8 +48,8 @@ function Home() {
     const isInView = useInView(ref, { once: true });
 
     return (
-        <Container ref={ref}>
-            <div id="home">
+        <Container id="home" ref={ref}>
+            
                 <Layout>
                     <p
                         style={{
@@ -82,15 +65,6 @@ function Home() {
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.8s"
                         }}>Kim Gi Beom</p>
                 </Layout>
-            </div>
-            {/* <Nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Profile</li>
-                    <li>Skills</li>
-                    <li>Projects</li>
-                </ul>
-             </Nav> */}
 
             <motion.div
                 initial={{ scaleX: 3 }}

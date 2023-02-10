@@ -1,20 +1,17 @@
 import styled from "styled-components";
 
 const Conatiner = styled.div`
-    height: 10vh;
     width: 100%;
-    /* display: flex; */
-    justify-content: center;
-    margin: auto;
+    height: 7vh;
     background-color: #11264F;
 
     p {
+        height: 50%;
         font-size: 24px;
         color: white;
         font-weight: bold;
-        line-height: 10vh;
         float: right;
-        margin-right: 50px;
+        padding: 0.5em 1em;
     }
 `
 

@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Navbar from './Component/Section_navBar';
 import Home from './Component/Section_home';
