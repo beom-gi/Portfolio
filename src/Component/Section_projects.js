@@ -90,7 +90,7 @@ const ImgContainer = styled.div`
 
 function Projects() {
 
-    const projectUrl = ["https://beom-gi.github.io/Chromapp-momentum/", "https://beom-gi.github.io/Drawing-board/", "http://beom-gi.github.io"];
+    const projectUrl = ["https://beom-gi.github.io/Chromapp-momentum/", "https://beom-gi.github.io/Drawing-board/", "http://beom-gi.github.io/portfolio.io/"];
     const projectCode = ["https://github.com/beom-gi/Chromapp-momentum", "https://github.com/beom-gi/Drawing-board", "https://github.com/beom-gi/Portfolio"];
 
     return (
