@@ -27,49 +27,43 @@ const Layout = styled.div`
     }
 `
 const ProfileBox = styled.div`
-    height: 800px;
+    height: 70vh;
     border: 3px solid #11264F;
     border-radius: 30px;
     text-align: center;
-    margin-top: 4%;
+    margin-top: 3em;
+    padding-top: 4em;
     background-color: #fff;
     
     ${customMedia.lessThan("labtop")`
-      height: 400px;
+      height: 55vh;
       padding: 50px;
     `}
 
     #idPicture {
-        width: 188px;
+        width: 170px;
         border-radius: 100px;
-        margin-top: 5%;
 
         ${customMedia.lessThan("labtop")`
             width: 140px;
             float: left;
             margin: 0 0 0 90px;
         `}
-
-        /* ${customMedia.lessThan("labtop")`
-            width: 150px;
-            float: left;
-            margin: 45px 0 0 70px;
-        `} */
     }
 
     #introduce {
         font-size: 1.2em;
         font-weight: bold;
-        margin-top: 7%;
+        padding-top: 3em;
 
         ${customMedia.lessThan("labtop")`
             font-size: 1em;
-            margin-top: 10%;
+            padding-top: 5em;
         `}
     }
 `
 const InfoboxConatiner = styled.div`
-    margin-top: 9%;
+    margin-top: 5.5em;
     display: grid;
     justify-content: center;
     text-align: center;
@@ -77,7 +71,7 @@ const InfoboxConatiner = styled.div`
     grid-template-rows: 150px 150px;
 
     ${customMedia.lessThan("labtop")`
-        margin-top: 13%;
+        margin-top: 10em;
         grid-template-columns: 300px 300px 300px;
         grid-template-rows: 100px 100px;
     `}

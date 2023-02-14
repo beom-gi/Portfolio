@@ -25,7 +25,7 @@ const Container = styled.div`
 `
 const Layout = styled.div`
     width: 1020px;
-    padding: 30em 0;
+    padding: 25em 0;
     ${customMedia.lessThan("labtop")`
             padding: 18em 0;
         `}

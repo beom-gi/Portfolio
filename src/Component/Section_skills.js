@@ -8,14 +8,14 @@ const customMedia = generateMedia({
 });
 
 const Container = styled.div`
-    height: 100vh;
+    height: 99vh;
     display: flex;
     justify-content: center;
     background-color: #eee;
 `
 const Layout = styled.div`
     width: 1020px;
-    padding-top: 20em;
+    padding-top: 7em;
 
     ${customMedia.lessThan("labtop")`
       padding-top: 6em;
@@ -29,11 +29,11 @@ const Layout = styled.div`
     }
 
     .skills-box {
-        margin: 9% 0;
+        padding: 3em 0;
         display: flex;
 
         ${customMedia.lessThan("labtop")`
-            margin: 4.5% 0;
+            padding: 2em 0;
         `}
 
         .logoIcon {
@@ -42,7 +42,7 @@ const Layout = styled.div`
         }
 
         p {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: bold;
 
 
@@ -60,6 +60,7 @@ const Layout = styled.div`
             margin-top: 15px;
             box-shadow: 0 4px 4px -4px #333;
             overflow: hidden;
+            margin-top: 1.5em;
 
             #percentbar {
                 height: 100%;
@@ -75,13 +76,13 @@ const LanguageBox = styled.div`
     flex-direction: column;
     align-items: center;
 `
-const Wrapper = styled.div`
-    width: 100%;
-    height: 99.9%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+// const Wrapper = styled.div`
+//     width: 100%;
+//     height: 99.9%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// `
 const htmlBarStyles = {
     indeterAnimate: {
         width: ["0%", "80%"],
@@ -163,9 +164,9 @@ function Skills() {
     }, [isInView])
 
     return (
-        <Container>
-            <Wrapper id="skills" ref={ref}>
-                {isInView && <Layout >
+        <Container id="skills" ref={ref}>
+            {/* <Wrapper ref={ref}> */}
+                {isInView && <Layout>
                     
                     <p id="title">skills</p>
 
@@ -258,7 +259,7 @@ function Skills() {
                     </div>
 
                 </Layout>}
-            </Wrapper>
+            {/* </Wrapper> */}
         </Container>
     )
 }

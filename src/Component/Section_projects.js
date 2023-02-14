@@ -31,7 +31,7 @@ const Layout = styled.div`
 const ProjectList = styled.div`
     display: flex;
     justify-content: center;
-    padding-top: 13em;
+    padding-top: 11em;
 
     ${customMedia.lessThan("labtop")`
       padding-top: 5em;
