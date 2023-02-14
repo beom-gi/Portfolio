@@ -27,7 +27,7 @@ const Layout = styled.div`
     }
 `
 const ProfileBox = styled.div`
-    height: 70vh;
+    height: 65vh;
     border: 3px solid #11264F;
     border-radius: 30px;
     text-align: center;
@@ -37,7 +37,7 @@ const ProfileBox = styled.div`
     
     ${customMedia.lessThan("labtop")`
       height: 55vh;
-      padding: 50px;
+      padding: 3em;
     `}
 
     #idPicture {
@@ -63,7 +63,7 @@ const ProfileBox = styled.div`
     }
 `
 const InfoboxConatiner = styled.div`
-    margin-top: 5.5em;
+    margin-top: 3em;
     display: grid;
     justify-content: center;
     text-align: center;
