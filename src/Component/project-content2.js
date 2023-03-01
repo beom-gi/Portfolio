@@ -137,7 +137,7 @@ function Content2() {
             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s"
         }}>
             <ContentAbout>
-                <p id="content-title">Chromapp Clone</p>
+                <p id="content-title">Paint</p>
                 <ContentSkills>
                     <h1>기능구현</h1>
                     <p>- Canvas 태그를 활용한 그림판</p>
