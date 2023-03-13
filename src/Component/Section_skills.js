@@ -226,6 +226,24 @@ function Skills() {
                     <div className="skills-box">
 
                         <LanguageBox>
+                            <img src="img/Icon/languageicon/react.png" className="logoIcon" />
+                            <p>React</p>
+                        </LanguageBox>
+
+                        <div className="progressbar">
+                            <motion.div
+                                id="percentbar"
+                                initial="start"
+                                animate={barAnimation}
+                                variants={reactBarStyles}
+                                layout
+                            />
+                        </div>
+                    </div>
+
+                    <div className="skills-box">
+
+                        <LanguageBox>
                             <img src="img/Icon/languageicon/jq.png" className="logoIcon" />
                             <p>Jquery</p>
                         </LanguageBox>
@@ -236,24 +254,6 @@ function Skills() {
                                 initial="start"
                                 animate={barAnimation}
                                 variants={jqBarStyles}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="skills-box">
-
-                        <LanguageBox>
-                            <img src="img/Icon/languageicon/react.png" className="logoIcon" />
-                            <p>React.js</p>
-                        </LanguageBox>
-
-                        <div className="progressbar">
-                            <motion.div
-                                id="percentbar"
-                                initial="start"
-                                animate={barAnimation}
-                                variants={reactBarStyles}
-                                layout
                             />
                         </div>
                     </div>
